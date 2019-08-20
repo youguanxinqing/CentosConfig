@@ -1,0 +1,10 @@
+# 中文正常显示
+export LC_ALL="zh_CN.UTF-8"
+export LANG="zh_CN.UTF-8"
+export GOPATH=/home/Go
+
+# 使 zsh 支持正则
+setopt no_nomatch
+
+# tmux vim 色彩兼容
+alias tmux="tmux -2"
