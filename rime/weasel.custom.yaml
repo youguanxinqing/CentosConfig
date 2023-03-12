@@ -1,0 +1,79 @@
+patch:
+    "style/inline_preedit": true
+    "style/color_scheme": mac_green
+    
+    "style/horizontal": true
+    "style/layout/border": 0
+    "style/layout/border_height": 0
+    "style/layout/border_width": 0
+    "style/layout/round_corner": 10
+    "style/inline_preedit": true # 嵌入式候选窗单行显示
+    "style/layout/border_width": 0
+    "style/font_point": 13
+    # "style/layout/hilite_padding": 10
+    "style/layout/margin_y": 6
+    "style/layout/margin_x": 6
+
+    "preset_color_schemes/mac_green":
+        name: mac_green
+        horizontal: true             # true横排，false竖排
+        candidate_format: "%c %@ "   # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+        corner_radius: 5                             # 窗口圆角
+        hilited_corner_radius: 5                     # 高亮圆角
+        line_spacing: 0                             # 行间距(适用于竖排)
+        border_height: 0                             # 窗口上下高度，大于圆角半径才生效
+        border_width: 0                              # 窗口左右宽度，大于圆角半径才生效
+        font_face: "PingFangSC"                      # 候选词字体
+        font_point: 13                               # 候选字大小
+        label_font_point: 12                         # 候选编号大小
+        text_color: 0x424242                    # 拼音行文字颜色
+        back_color: 0xCCCCCC                    # 候选条背景色
+        border_color: 0xCCCCCC                  # 边框色
+        label_color: 0x999999                   # 预选栏编号颜色
+        candidate_text_color: 0x3c3c3c          # 预选项文字颜色
+        comment_text_color: 0x999999            # 拼音等提示文字颜色
+        hilited_text_color: 0x999999            # 高亮拼音 (需要开启内嵌编码)
+        hilited_candidate_back_color: 0x32A14C  # 第一候选项背景色
+        hilited_candidate_text_color: 0xFFFFFF  # 第一候选项文字颜色
+        hilited_candidate_label_color: 0xFFFFFF # 第一候选项编号颜色
+        hilited_comment_text_color: 0x999999    # 注解文字高亮
+
+    "preset_color_schemes/yg":
+        author: youguanxinqing
+        name: yg
+        horizontal: true                                       # 水平排列
+        candidate_format: "%c\u2005%@"
+        inline_preedit: true                                   # 单行显示，false双行显示
+        corner_radius: 5                                      # 候选条圆角
+        border_height: 0
+        border_width: 0
+        back_color: 0x4D2127                                   # 候选条背景色
+        font_face: "OperatorMonoNerdFontComplete-Italic,HanaMinA" # 候选词字体
+        font_face: "HanaMinA"               # 候选词字体
+        font_point: 18                                         # 候选字词大小
+        text_color: 0x5024D4                                   # 候选词颜色
+        label_font_face: "OperatorMonoNerdFontComplete-Italic" # 候选词编号字体
+        label_font_point: 16                                   # 候选编号大小
+        hilited_candidate_text_color: 0x781D30                 # 候选文字颜色
+        hilited_candidate_back_color: 0x5024D4                 # 候选文字背景色
+        comment_text_color: 0xB5A700                           # 拼音等提示文字颜色
+    "preset_color_schemes/shu":
+        author: youguanxinqing
+        name: shu
+        horizontal: true              # true横排，false竖排
+        candidate_format: "%c %@ "    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+        corner_radius: 6                             # 窗口圆角 
+        font_point: 16                               # 候选文字大小
+        label_font_point: 15                         # 候选编号大小
+        line_spacing: 10                             # 行间距(适用于竖排)
+        font_face: "PingFangSC-Regular,HanaMinB"     # 候选词字体
+        text_color: 0x8236d3                     # 拼音行文字颜色
+        back_color: 0x362b00                     # 候选条背景色，24位色值，16进制，BGR顺序
+        candidate_text_color: 0x969483           # 预选项文字颜色
+        comment_text_color: 0xc098a12a           # 拼音等提示文字颜色
+        hilited_text_color: 0x98a12a             # 高亮拼音 (需要开启内嵌编码)
+        hilited_back_color: 0x444444             # 第一候选项背景背景色
+        hilited_candidate_label_color: 0xfafafa  # 第一候选项编号颜色
+        hilited_candidate_back_color: 0x8236d3   # 候选文字背景色
+        hilited_candidate_text_color: 0xffffff   # 第一候选项文字颜色
+        hilited_comment_text_color: 0x362b00     # 注解文字高亮
