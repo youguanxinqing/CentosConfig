@@ -11,6 +11,27 @@ M.general = {
   }
 }
 
+M.comment = {
+  plugin = true,
+
+  -- toggle comment in both modes
+  n = {
+    ["gcc"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "toggle comment",
+    },
+  },
+
+  v = {
+    ["gc"] = {
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "toggle comment",
+    },
+  },
+}
+
 -- more keybinds!
 
 return M

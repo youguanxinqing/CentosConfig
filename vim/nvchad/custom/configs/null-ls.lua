@@ -20,6 +20,10 @@ local sources = {
   -- go
   b.formatting.gofmt,
   b.formatting.goimports,
+
+  -- python
+  b.formatting.isort,
+  b.formatting.black,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
