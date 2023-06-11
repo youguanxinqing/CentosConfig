@@ -22,6 +22,10 @@ M.comment = {
       end,
       "toggle comment",
     },
+    ["<Leader>qa"] = {
+      ":qa<CR>",
+      "quit all"
+    }
   },
 
   v = {

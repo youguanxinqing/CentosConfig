@@ -1,27 +1,58 @@
-local present, alpha = pcall(require, "alpha")
+local present, _ = pcall(require, "alpha")
 
 if not present then
   return
 end
 
-local Path = require('plenary.path')
-local config = require('session_manager.config')
-require('session_manager').setup({
-  sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'), -- The directory where the session files will be saved.
-  -- session_filename_to_dir = session_filename_to_dir, -- Function that replaces symbols into separators and colons to transform filename into a session directory.
-  dir_to_session_filename = function ()
-    local session_proj_dir = vim.fn.stdpath('data') .. 'sessions'
-    return session_proj_dir
-  end, -- Function that replaces separators and colons into special symbols to transform session directory into a filename. Should use `vim.loop.cwd()` if the passed `dir` is `nil`.
-  autoload_mode = config.AutoloadMode.LastSession, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-  autosave_last_session = true, -- Automatically save last session on exit and on session switch.
-  autosave_ignore_not_normal = true, -- Plugin will not save a session when no buffers are opened, or all of them aren't writable or listed.
-  autosave_ignore_dirs = {}, -- A list of directories where the session will not be autosaved.
-  autosave_ignore_filetypes = { -- All buffers of these file types will be closed before the session is saved.
-    'gitcommit',
-    'gitrebase',
-  },
-  autosave_ignore_buftypes = {}, -- All buffers of these bufer types will be closed before the session is saved.
-  autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
-  max_path_length = 80,  -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
-})
+-- dashboard image
+local function dashboard_handler(dashboard)
+  local logo = {
+    -- [[    _______  __    __       ___      .__   __.  ]],
+    -- [[   /  _____||  |  |  |     /   \     |  \ |  |  ]],
+    -- [[  |  |  __  |  |  |  |    /  ^  \    |   \|  |  ]],
+    -- [[  |  | |_ | |  |  |  |   /  /_\  \   |  . `  |  ]],
+    -- [[  |  |__| | |  `--'  |  /  _____  \  |  |\   |  ]],
+    -- [[   \______|  \______/  /__/     \__\ |__| \__|  ]],
+
+    [[                                   ]],
+    [[          ▀████▀▄▄              ▄█ ]],
+    [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
+    [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
+    [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
+    [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
+    [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
+    [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
+    [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
+    [[   █   █  █      ▄▄           ▄▀   by guan ]],
+
+    -- [[      .'`'.'`'.       ]],
+    -- [[  .''.`.  :  .`.''.   ]],
+    -- [[  '.    '. .'    .'   ]],
+    -- [[  .```  .' '.  ```.   ]],
+    -- [[  '..',`  :  `,'..'   ]],
+    -- [[       `-'`'-`))      ]],
+    -- [[              ((      ]],
+    -- [[               \|     ]],
+
+  }
+
+  dashboard.section.buttons.val = {
+     dashboard.button("<leader>ff", "  Find file", ":Telescope find_files <CR>"),
+     dashboard.button("<leader>fo", "  Recent Files", ":Telescope oldfiles <CR>"),
+     dashboard.button("<leader>fw", "  Find Word", ":Telescope live_grep <CR>"),
+     dashboard.button("<leader>th", "  Themes", ":Telescope themes"),
+     dashboard.button("<leader>ch", "  Mappings", ":NvCheatsheet"),
+     dashboard.button("<leader>qa", "  Quit Neovim", ":qa<CR>"),
+  }
+
+  dashboard.section.header.val = logo
+  dashboard.section.footer.val = "Don't mind not knowing."
+
+  return dashboard
+end
+
+-- export table 
+return {
+  dashboard_handler = dashboard_handler,
+}
+

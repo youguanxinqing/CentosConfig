@@ -82,8 +82,10 @@ local plugins = {
       -- 'Shatur/neovim-session-manager',
     },
     opts = function ()
-      local startify = require('alpha.themes.dashboard')
-      return startify
+      local handlers = require("custom.configs.alpha-nvim")
+
+      local dashboard = require('alpha.themes.dashboard')
+      return handlers.dashboard_handler(dashboard)
     end,
     config = function(_, dashboard)
       require("alpha").setup(dashboard.opts)
@@ -96,12 +98,6 @@ local plugins = {
       require("custom.configs.auto-session")
     end
   },
-  -- {
-  --   'tanvirtin/vgit.nvim',
-  --   config = function()
-  --     require('vgit').setup()
-  --   end,
-  -- }
 }
 
 return plugins
