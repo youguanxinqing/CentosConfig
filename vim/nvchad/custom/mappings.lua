@@ -36,6 +36,15 @@ M.comment = {
   },
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    -- find
+    ["<C-f>"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+  },
+}
+
 -- more keybinds!
 
 return M
