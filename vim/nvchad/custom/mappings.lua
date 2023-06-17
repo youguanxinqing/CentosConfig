@@ -45,6 +45,20 @@ M.telescope = {
 	},
 }
 
+M.tabufline = {
+	plugin = true,
+
+	n = {
+		-- close all buffers
+		["<leader>ax"] = {
+			function()
+				require("nvchad_ui.tabufline").closeAllBufs()
+			end,
+			"Close buffer",
+		},
+	},
+}
+
 -- more keybinds!
 
 return M
