@@ -41,7 +41,7 @@ M.telescope = {
 
 	n = {
 		-- find
-		["<C-f>"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+		["<C-f>"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "find in current buffer" },
 	},
 }
 
@@ -52,9 +52,9 @@ M.tabufline = {
 		-- close all buffers
 		["<leader>ax"] = {
 			function()
-				require("nvchad_ui.tabufline").closeAllBufs()
+				require("nvchad_ui.tabufline").closeOtherBufs()
 			end,
-			"Close buffer",
+			"close all buffer",
 		},
 	},
 }
