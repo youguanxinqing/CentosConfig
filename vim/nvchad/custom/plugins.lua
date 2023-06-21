@@ -93,11 +93,21 @@ local plugins = {
 	},
 	{
 		"rmagatti/auto-session",
+    dependencies = {
+      "zwhitchcox/auto-session-nvim-tree",
+    },
 		lazy = false,
 		config = function()
 			require("custom.configs.auto-session")
 		end,
 	},
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    config = function()
+      require("custom.configs.symbols-outline")
+    end
+  },
 }
 
 return plugins

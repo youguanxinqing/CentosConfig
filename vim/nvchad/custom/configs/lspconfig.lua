@@ -13,6 +13,14 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+-- local custom_on_attach = function (client, bufnr)
+--   if client.server_capabilities.documentSymbolProvider then
+--     local navic = require "nvim-navic"
+--     navic.attach(client, bufnr)
+--   end
+--   on_attach(client, bufnr)
+-- end
+
 --
 -- lspconfig.pyright.setup { blabla}
 --
@@ -30,6 +38,7 @@ lspconfig.gopls.setup({
 	capabilities = capabilities,
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	root = lspconfig.util.root_pattern("go.mod"),
+  cmd_env = {GOFLAGS="-tags=tag1,tag2"},
 })
 
 lspconfig.pyright.setup({

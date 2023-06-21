@@ -18,3 +18,4 @@
 --   end,
 -- })
 
+-- vim.o.winbar = "%{%v:lua.require'custom.configs.nvim-navic'.get_winbar()%}"
