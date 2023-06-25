@@ -22,8 +22,8 @@ local sources = {
 	b.formatting.goimports,
 
 	-- python
-	b.formatting.isort,
-	b.formatting.black,
+	-- b.formatting.isort,
+	-- b.formatting.black,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

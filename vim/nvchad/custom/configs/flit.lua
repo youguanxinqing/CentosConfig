@@ -25,7 +25,7 @@ end
 
 leap.opts.safe_labels = {
 	-- "s",
-	"f",
+	-- "f",
 	"n",
 	"u",
 	"t",
@@ -45,7 +45,7 @@ leap.opts.safe_labels = {
 
 leap.opts.labels = {
 	-- "s",
-	"f",
+	-- "f",
 	"n",
 	"j",
 	"k",

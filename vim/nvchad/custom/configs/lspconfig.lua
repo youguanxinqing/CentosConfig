@@ -38,11 +38,22 @@ lspconfig.gopls.setup({
 	capabilities = capabilities,
 	filetypes = { "go", "gomod", "gowork", "gotmpl" },
 	root = lspconfig.util.root_pattern("go.mod"),
-  cmd_env = {GOFLAGS="-tags=tag1,tag2"},
+	-- cmd_env = { GOFLAGS = "-tags=tag1,tag2" },
 })
 
 lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "python" },
+	settings = {
+		python = {
+			analysis = {
+				diagnosticMode = "openFilesOnly",
+				typeCheckingMode = "basic",
+				diagnosticSeverityOverrides = {
+					reportGeneralTypeIssues = "none",
+				},
+			},
+		},
+	},
 })
