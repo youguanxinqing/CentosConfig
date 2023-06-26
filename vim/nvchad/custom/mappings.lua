@@ -59,6 +59,17 @@ M.tabufline = {
 	},
 }
 
+M.bookmark = {
+	plugin = true,
+
+	n = {
+		["<leader>ma"] = { "<cmd> BookmarkToggle <CR>", "bookmark toggle" },
+		["<leader>ml"] = { "<cmd> BookmarkList <CR>", "list bookmarks" },
+	},
+}
+
+-- require("core.utils").load_mappings("bookmark")
+
 -- more keybinds!
 
 return M

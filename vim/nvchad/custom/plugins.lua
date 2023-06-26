@@ -93,21 +93,42 @@ local plugins = {
 	},
 	{
 		"rmagatti/auto-session",
-    dependencies = {
-      "zwhitchcox/auto-session-nvim-tree",
-    },
+		dependencies = {
+			"zwhitchcox/auto-session-nvim-tree",
+		},
 		lazy = false,
 		config = function()
 			require("custom.configs.auto-session")
 		end,
 	},
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    config = function()
-      require("custom.configs.symbols-outline")
-    end
-  },
+	{
+		"simrat39/symbols-outline.nvim",
+		cmd = "SymbolsOutline",
+		config = function()
+			require("custom.configs.symbols-outline")
+		end,
+	},
+	{
+		"ChristianChiarulli/bookmark.nvim",
+		lazy = false,
+		cmd = { "BookmarkToggle", "BookmarkList", "FilemarkToggle", "FilemarkList" },
+		dependencies = {
+			"kkharji/sqlite.lua",
+		},
+		init = function()
+			require("core.utils").load_mappings("bookmark")
+		end,
+		config = function()
+			local icons = require("custom.configs.icons")
+			require("bookmark").setup({
+				sign = icons.ui.BookMark,
+				highlight = "Function",
+				file_sign = "󱡅",
+				file_highlight = "Function",
+			})
+			require("telescope").load_extension("bookmark")
+		end,
+	},
 }
 
 return plugins
