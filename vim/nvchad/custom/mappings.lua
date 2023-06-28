@@ -54,7 +54,7 @@ M.tabufline = {
 			function()
 				require("nvchad_ui.tabufline").closeOtherBufs()
 			end,
-			"close all buffer",
+			"close all buffer except current buffer",
 		},
 	},
 }

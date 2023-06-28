@@ -129,6 +129,21 @@ local plugins = {
 			require("telescope").load_extension("bookmark")
 		end,
 	},
+  {
+    "Mr-LLLLL/interestingwords.nvim",
+		keys = { "<leader>k" },
+    config = function()
+      require("interestingwords").setup {
+        colors = { '#aeee00', '#ff0000', '#C4B0FF', '#FFABAB', '#FFEF82', '#62CDFF' },
+          search_count = true,
+          navigation = true,
+          -- search_key = "<leader>m",
+          -- cancel_search_key = "<leader>M",
+          color_key = "<leader>k",
+          cancel_color_key = "<leader>K",
+      }
+    end
+  }
 }
 
 return plugins
