@@ -7,8 +7,6 @@ M.treesitter = {
 		"html",
 		"css",
 		"javascript",
-		"typescript",
-		"tsx",
 		"c",
 		"markdown",
 		"markdown_inline",
@@ -33,7 +31,6 @@ M.mason = {
 		-- web dev stuff
 		"css-lsp",
 		"html-lsp",
-		"typescript-language-server",
 		"prettier",
 
 		-- c/cpp stuff
@@ -57,6 +54,12 @@ M.nvimtree = {
 			show = {
 				git = true,
 			},
+		},
+	},
+
+	actions = {
+		open_file = {
+			resize_window = false,
 		},
 	},
 }

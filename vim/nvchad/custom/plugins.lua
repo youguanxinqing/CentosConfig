@@ -145,6 +145,14 @@ local plugins = {
 			})
 		end,
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		opts = function()
+			local opts = require("plugins.configs.others").blankline
+			opts.show_current_context_start = false
+			return opts
+		end,
+	},
 }
 
 return plugins
