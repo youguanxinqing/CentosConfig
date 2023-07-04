@@ -62,6 +62,10 @@ M.nvimtree = {
 			resize_window = false,
 		},
 	},
+
+  filters = {
+    custom = { ".git" },
+  },
 }
 
 return M
