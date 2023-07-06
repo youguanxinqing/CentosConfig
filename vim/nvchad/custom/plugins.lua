@@ -39,13 +39,13 @@ local plugins = {
 	},
 
 	{
-    "nvim-telescope/telescope.nvim",
-    opts = function ()
-      local default_opts = require("plugins.configs.telescope")
-      local custom_opts = overrides.telescope
-      local opts = vim.tbl_deep_extend("force", default_opts, custom_opts)
-      return opts
-    end,
+		"nvim-telescope/telescope.nvim",
+		opts = function()
+			local default_opts = require("plugins.configs.telescope")
+			local custom_opts = overrides.telescope
+			local opts = vim.tbl_deep_extend("force", default_opts, custom_opts)
+			return opts
+		end,
 	},
 
 	-- Install a plugin
@@ -74,7 +74,8 @@ local plugins = {
 	-- search words
 	{
 		"ggandor/flit.nvim",
-		lazy = false,
+		event = "VeryLazy",
+		-- lazy = false,
 		dependencies = {
 			{
 				"ggandor/leap.nvim",
@@ -162,6 +163,27 @@ local plugins = {
 			opts.show_current_context_start = false
 			return opts
 		end,
+	},
+	{
+		"karb94/neoscroll.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("neoscroll").setup()
+		end,
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>s",
+				mode = { "n" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Toggle Flash Search",
+			},
+		},
 	},
 }
 

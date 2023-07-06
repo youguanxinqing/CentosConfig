@@ -10,10 +10,14 @@ return {
 	-- text_background_opacity = 0.3,
 	window_background_opacity = 0.9,
 	use_ime = true,
-	font = wezterm.font("Hurmit Nerd Font"),
-	font_size = 18,
+	-- font = wezterm.font("Hurmit Nerd Font"),
+	font = wezterm.font("JetBrainsMono Nerd Font"),
+	font_size = 15,
 	window_padding = {
+		top = 0,
 		bottom = 0,
+		left = 0,
+		right = 0,
 	},
 
 	leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },

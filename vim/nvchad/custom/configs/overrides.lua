@@ -63,27 +63,29 @@ M.nvimtree = {
 		},
 	},
 
-  filters = {
-    custom = { ".git" },
-  },
+	filters = {
+		custom = { ".git" },
+	},
 }
 
 M.telescope = {
-  defaults = {
-    layout_config = {
-      horizontal = {
-        prompt_position = "top",
-        preview_width = 0.45,
-        results_width = 0.8,
-      },
-      vertical = {
-        mirror = false,
-      },
-      width = 0.93,
-      height = 0.95,
-      preview_cutoff = 120,
-    },
-  }
+	defaults = {
+		initial_mode = "insert",
+		selection_strategy = "reset",
+		layout_config = {
+			horizontal = {
+				prompt_position = "top",
+				preview_width = 0.5,
+				results_width = 0.8,
+			},
+			vertical = {
+				mirror = false,
+			},
+			width = 0.93,
+			height = 0.95,
+			preview_cutoff = 120,
+		},
+	},
 }
 
 return M
