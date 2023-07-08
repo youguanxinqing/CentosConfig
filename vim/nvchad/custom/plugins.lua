@@ -46,12 +46,12 @@ local plugins = {
 		-- 	local opts = vim.tbl_deep_extend("force", default_opts, custom_opts)
 		-- 	return opts
 		-- end,
-    opts = overrides.telescope,
+		opts = overrides.telescope,
 	},
-  {
-    "folke/which-key.nvim",
-    opts = overrides.whichkey,
-  },
+	{
+		"folke/which-key.nvim",
+		opts = overrides.whichkey,
+	},
 
 	-- Install a plugin
 	{
@@ -182,6 +182,21 @@ local plugins = {
 				desc = "Toggle Flash Search",
 			},
 		},
+	},
+	{
+		"utilyre/barbecue.nvim",
+		event = "VeryLazy",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		config = function()
+			require("barbecue").setup({
+				attach_navic = true,
+			})
+		end,
 	},
 }
 

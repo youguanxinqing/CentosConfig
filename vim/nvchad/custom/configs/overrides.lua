@@ -82,7 +82,7 @@ M.telescope = {
 			vertical = {
 				mirror = false,
 			},
-			height = 0.75,
+			height = 0.80,
 			preview_cutoff = 120,
 		},
 	},
@@ -90,8 +90,8 @@ M.telescope = {
 
 M.whichkey = {
 	window = {
-		border = "double"
-	}
+		border = "double",
+	},
 }
 
 return M
