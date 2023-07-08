@@ -40,13 +40,18 @@ local plugins = {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		opts = function()
-			local default_opts = require("plugins.configs.telescope")
-			local custom_opts = overrides.telescope
-			local opts = vim.tbl_deep_extend("force", default_opts, custom_opts)
-			return opts
-		end,
+		-- opts = function()
+		-- 	local default_opts = require("plugins.configs.telescope")
+		-- 	local custom_opts = overrides.telescope
+		-- 	local opts = vim.tbl_deep_extend("force", default_opts, custom_opts)
+		-- 	return opts
+		-- end,
+    opts = overrides.telescope,
 	},
+  {
+    "folke/which-key.nvim",
+    opts = overrides.whichkey,
+  },
 
 	-- Install a plugin
 	{
@@ -162,13 +167,6 @@ local plugins = {
 			local opts = require("plugins.configs.others").blankline
 			opts.show_current_context_start = false
 			return opts
-		end,
-	},
-	{
-		"karb94/neoscroll.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("neoscroll").setup()
 		end,
 	},
 	{

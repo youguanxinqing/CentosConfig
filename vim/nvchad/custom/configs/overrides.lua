@@ -72,6 +72,7 @@ M.telescope = {
 	defaults = {
 		initial_mode = "insert",
 		selection_strategy = "reset",
+		layout_strategy = "bottom_pane",
 		layout_config = {
 			horizontal = {
 				prompt_position = "top",
@@ -81,11 +82,16 @@ M.telescope = {
 			vertical = {
 				mirror = false,
 			},
-			width = 0.93,
-			height = 0.95,
+			height = 0.75,
 			preview_cutoff = 120,
 		},
 	},
+}
+
+M.whichkey = {
+	window = {
+		border = "double"
+	}
 }
 
 return M
