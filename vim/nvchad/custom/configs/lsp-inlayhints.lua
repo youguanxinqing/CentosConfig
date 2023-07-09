@@ -10,7 +10,9 @@ vim.api.nvim_set_hl(0, "CustomizeLspInlayHint", { fg = "#d8d8d8", bg = "#3a3a3a"
 M.opts = {
 	inlay_hints = {
 		highlight = "CustomizeLspInlayHint",
+		labels_separator = " ",
 	},
+	enabled_at_startup = false,
 }
 
 vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
@@ -27,6 +29,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		inlayhints.on_attach(client, bufnr)
 	end,
 })
+
+vim.cmd([[command! InlayHintsToggle lua require('lsp-inlayhints').toggle()]])
 
 M.setup = function(opts)
 	require("lsp-inlayhints").setup(opts)
