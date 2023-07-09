@@ -195,6 +195,16 @@ local plugins = {
 			})
 		end,
 	},
+	{
+		"lvimuser/lsp-inlayhints.nvim",
+		event = "VeryLazy",
+		opts = function()
+			return require("custom.configs.lsp-inlayhints").opts
+		end,
+		config = function(_, opts)
+			require("custom.configs.lsp-inlayhints").setup(opts)
+		end,
+	},
 }
 
 return plugins
