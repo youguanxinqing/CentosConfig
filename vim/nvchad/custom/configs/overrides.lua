@@ -74,16 +74,27 @@ M.telescope = {
 		selection_strategy = "reset",
 		layout_strategy = "bottom_pane",
 		layout_config = {
-			horizontal = {
+			flex = {
+				width = 0.9,
+			},
+			bottom_pane = {
 				prompt_position = "top",
+			},
+			horizontal = {
+				prompt_position = "bottom",
 				preview_width = 0.5,
 				results_width = 0.8,
 			},
 			vertical = {
 				mirror = false,
 			},
-			height = 0.80,
+			height = 0.70,
 			preview_cutoff = 120,
+		},
+		borderchars = {
+			prompt = { "─", " ", "─", " ", "╭", "╮", "╯", "╰" },
+			results = { "─", "│", "─", "│", " ", "╮", "╯", "╰" },
+			preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		},
 	},
 }
