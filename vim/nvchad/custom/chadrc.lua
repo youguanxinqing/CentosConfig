@@ -17,4 +17,8 @@ M.plugins = "custom.plugins"
 -- check core.mappings for table structure
 M.mappings = require("custom.mappings")
 
+-- customize config
+vim.wo.wrap = false
+vim.cmd([[hi ColorColumn ctermbg=0 guibg=#242a32]])
+
 return M

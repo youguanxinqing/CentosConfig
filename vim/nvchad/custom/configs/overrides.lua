@@ -4,12 +4,8 @@ M.treesitter = {
 	ensure_installed = {
 		"vim",
 		"lua",
-		"html",
-		"css",
 		"javascript",
 		"c",
-		"markdown",
-		"markdown_inline",
 		"go",
 		"python",
 		"rust",
@@ -28,13 +24,6 @@ M.mason = {
 		"lua-language-server",
 		"stylua",
 
-		-- web dev stuff
-		"css-lsp",
-		"html-lsp",
-		"prettier",
-
-		-- c/cpp stuff
-		--
 		--  custom
 		"pyright",
 		"gopls",
@@ -103,6 +92,10 @@ M.whichkey = {
 	window = {
 		border = "double",
 	},
+}
+
+M.indent_blankline = {
+	show_current_context_start = false,
 }
 
 return M

@@ -49,6 +49,10 @@ local plugins = {
 		"folke/which-key.nvim",
 		opts = overrides.whichkey,
 	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		opts = overrides.indent_blankline,
+	},
 
 	-- Install a plugin
 	{
@@ -159,14 +163,6 @@ local plugins = {
 		end,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		opts = function()
-			local opts = require("plugins.configs.others").blankline
-			opts.show_current_context_start = false
-			return opts
-		end,
-	},
-	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		keys = {
@@ -180,30 +176,48 @@ local plugins = {
 			},
 		},
 	},
+	-- {
+	-- 	"utilyre/barbecue.nvim",
+	-- 	event = "VeryLazy",
+	-- 	name = "barbecue",
+	-- 	version = "*",
+	-- 	dependencies = {
+	-- 		"SmiteshP/nvim-navic",
+	-- 		"nvim-tree/nvim-web-devicons", -- optional dependency
+	-- 	},
+	-- 	config = function()
+	-- 		require("barbecue").setup({
+	-- 			attach_navic = true,
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"lvimuser/lsp-inlayhints.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = function()
+	-- 		return require("custom.configs.lsp-inlayhints").opts
+	-- 	end,
+	-- 	config = function(_, opts)
+	-- 		require("custom.configs.lsp-inlayhints").setup(opts)
+	-- 	end,
+	-- },
 	{
-		"utilyre/barbecue.nvim",
-		event = "VeryLazy",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
+		"theniceboy/nvim-deus",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("barbecue").setup({
-				attach_navic = true,
-			})
+			vim.cmd([[colorscheme deus]])
 		end,
 	},
 	{
-		"lvimuser/lsp-inlayhints.nvim",
+		"m4xshen/smartcolumn.nvim",
 		event = "VeryLazy",
-		opts = function()
-			return require("custom.configs.lsp-inlayhints").opts
-		end,
-		config = function(_, opts)
-			require("custom.configs.lsp-inlayhints").setup(opts)
-		end,
+		opts = {
+			colorcolumn = "120",
+			disabled_filetypes = { "help", "text", "markdown" },
+			custom_colorcolumn = {},
+			scope = "file",
+		},
 	},
 }
 

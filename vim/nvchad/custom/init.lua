@@ -19,6 +19,3 @@
 -- })
 
 -- vim.o.winbar = "%{%v:lua.require'custom.configs.nvim-navic'.get_winbar()%}"
-
-vim.opt.colorcolumn = "120"
-vim.wo.wrap = false
