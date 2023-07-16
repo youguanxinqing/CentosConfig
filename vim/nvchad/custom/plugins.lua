@@ -219,6 +219,28 @@ local plugins = {
 			scope = "file",
 		},
 	},
+	{
+		"princejoogie/dir-telescope.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+		cmd = { "GrepInDirectory", "FileInDirectory" },
+		config = function()
+			require("dir-telescope").setup({
+				hide = true,
+				no_ignore = false,
+				show_preview = true,
+			})
+			require("telescope").load_extension("dir")
+		end,
+	},
+	{
+		"gbrlsnchs/winpick.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("custom.configs.winpick").setup()
+		end,
+	},
 }
 
 return plugins

@@ -19,6 +19,9 @@ M.mappings = require("custom.mappings")
 
 -- customize config
 vim.wo.wrap = false
-vim.cmd([[hi ColorColumn ctermbg=0 guibg=#242a32]])
+vim.cmd([[
+hi ColorColumn ctermbg=0 guibg=#242a32
+hi WinSeparator ctermbg=0 guifg=#555555
+]])
 
 return M

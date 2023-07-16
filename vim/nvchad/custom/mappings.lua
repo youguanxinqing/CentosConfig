@@ -68,6 +68,14 @@ M.bookmark = {
 	},
 }
 
+M.winpick = {
+	-- plugin = true,
+
+	n = {
+		["<leader>ws"] = { "<cmd> lua require('custom.configs.winpick').select() <CR>", "select window" },
+	},
+}
+
 -- require("core.utils").load_mappings("bookmark")
 
 -- more keybinds!
