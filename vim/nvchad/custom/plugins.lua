@@ -226,12 +226,7 @@ local plugins = {
 		},
 		cmd = { "GrepInDirectory", "FileInDirectory" },
 		config = function()
-			require("dir-telescope").setup({
-				hide = true,
-				no_ignore = false,
-				show_preview = true,
-			})
-			require("telescope").load_extension("dir")
+			require("custom.configs.dir-telescope").setup()
 		end,
 	},
 	{
