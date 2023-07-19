@@ -22,6 +22,7 @@ vim.wo.wrap = false
 vim.cmd([[
 hi ColorColumn ctermbg=0 guibg=#242a32
 hi WinSeparator ctermbg=0 guifg=#555555
+hi GitSignsCurrentLineBlame ctermbg=0 guifg=#bbbbbb
 ]])
 
 return M

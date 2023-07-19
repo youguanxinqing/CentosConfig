@@ -43,6 +43,8 @@ local plugins = {
 		opts = overrides.telescope,
 		config = function(_, opts)
 			require("telescope").setup(opts)
+
+			require("custom.configs.telescope.git_bcommits")
 		end,
 	},
 	{
