@@ -1,6 +1,6 @@
 local overrides = require("custom.configs.overrides")
 
----@type NvPluginSpec[]
+-- ---@type NvPluginSpec[]
 local plugins = {
 
 	-- Override plugin definition options
@@ -42,7 +42,12 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		opts = overrides.telescope,
 		config = function(_, opts)
-			require("telescope").setup(opts)
+			local telescope = require("telescope")
+			telescope.setup(opts)
+			-- load extensions
+			for _, ext in ipairs(opts.extensions_list) do
+				telescope.load_extension(ext)
+			end
 
 			require("custom.configs.telescope.git_bcommits")
 		end,
