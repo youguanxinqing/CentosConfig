@@ -212,7 +212,7 @@ local plugins = {
 		end,
 	},
 	{
-		"m4xshen/smartcolumn.nvim",
+		"youguanxinqing/smartcolumn.nvim",
 		event = "VeryLazy",
 		opts = {
 			colorcolumn = "120",
