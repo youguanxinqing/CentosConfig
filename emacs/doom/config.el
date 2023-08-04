@@ -76,3 +76,11 @@
 ;; they are implemented.
 
 (setq rustic-lsp-server 'rust-analyzer)
+
+(condition-case err
+    (let ((path (with-temp-buffer
+                  (insert-file-contents-literally "~/.path")
+                  (buffer-string))))
+      (setenv "PATH" path)
+      (setq exec-path (append (parse-colon-path path) (list exec-directory))))
+  (error (warn "%s" (error-message-string err))))
