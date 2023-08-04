@@ -201,4 +201,4 @@
        (default +bindings +smartparens))
 
 
-(set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :height 140)
