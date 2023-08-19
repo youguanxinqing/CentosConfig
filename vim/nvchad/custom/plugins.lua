@@ -39,6 +39,11 @@ local plugins = {
 	},
 
 	{
+		"NvChad/nvterm",
+		opts = overrides.nvterm,
+	},
+
+	{
 		"nvim-telescope/telescope.nvim",
 		opts = overrides.telescope,
 		config = function(_, opts)
